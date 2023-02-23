@@ -63,11 +63,10 @@ public class TqsStackTests {
 
     @Test
     @DisplayName("If one pushes x then pops, the stack is empty")
-    public void testIfPushesXThenPeeks() {
-        testStack = new TqsStack<>(10);
+    public void testIfPushesThenPops() {
         testStack.push(3);
-        assertEquals(3, testStack.peek());
-        assertEquals(1, testStack.size());
+        testStack.pop();
+        assertEquals(true, testStack.isEmpty());
     }
 
     @Test
@@ -90,9 +89,7 @@ public class TqsStackTests {
     @DisplayName("Popping from an empty stack does throw a NoSuchElementException")
     public void testForPopEmpty() {
         testStack = new TqsStack<>(10);
-        assertThrows(NoSuchElementException.class, () -> {
-            testStack.pop();
-        });
+        assertThrows(NoSuchElementException.class, () -> {testStack.pop();});
     }
 
     @Test
