@@ -1,8 +1,9 @@
 package org.example;
 
+import java.util.ArrayList;
 import java.util.Stack;
 
-public class TqsStack {
+public class TqsStack<T> {
 
     private ArrayList<T> stack;
     private int maxSize;
