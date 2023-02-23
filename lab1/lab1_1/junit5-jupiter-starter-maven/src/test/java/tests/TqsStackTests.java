@@ -27,7 +27,7 @@ public class TqsStackTests {
 
     @Test
     @DisplayName("A stack is empty on construction")
-    public void stackIsEmptyOnConstruction() {
+    public void testStackIsEmptyOnConstruction() {
         TqsStack<Integer> stack = new TqsStack<>(10);
         assertEquals(true, stack.isEmpty());
     }
@@ -35,7 +35,7 @@ public class TqsStackTests {
 
     @Test
     @DisplayName("A stack has size 0 on construction")
-    public void stackHasSizeZeroOnConstruction() {
+    public void testStackHasSizeZeroOnConstruction() {
         TqsStack<Integer> stack = new TqsStack<>(10);
         assertEquals(0, stack.size());
     }
@@ -43,7 +43,7 @@ public class TqsStackTests {
 
     @Test
     @DisplayName("After n pushes to an empty stack, n >0, the stack is not empty and its size is n")
-    public void afterNPushesToAnEmptyStack() {
+    public void testAfterNPushesToAnEmptyStack() {
         testStack = new TqsStack<>(10);
         testStack.push(3);
         testStack.push(5);
@@ -56,14 +56,14 @@ public class TqsStackTests {
 
     @Test
     @DisplayName("If one pushes x then pops, the value popped is x")
-    public void ifPushesXThenPops() {
+    public void testIfPushesXThenPops() {
         testStack.push(3);
         assertEquals(3, testStack.pop());
     }
 
     @Test
     @DisplayName("If one pushes x then pops, the stack is empty")
-    public void ifPushesXThenPeeks() {
+    public void testIfPushesXThenPeeks() {
         testStack = new TqsStack<>(10);
         testStack.push(3);
         assertEquals(3, testStack.peek());
@@ -71,8 +71,25 @@ public class TqsStackTests {
     }
 
     @Test
+    @DisplayName("If the size is n, then after n pops, the stack is empty and has a size 0")
+    public void testIfTheSizeIsNThenAfterNPops() {
+        testStack = new TqsStack<>(10);
+        testStack.push(3);
+        testStack.push(5);
+        testStack.push(6);
+        testStack.push(7);
+        testStack.pop();
+        testStack.pop();
+        testStack.pop();
+        testStack.pop();
+        assertEquals(true, testStack.isEmpty());
+        assertEquals(0, testStack.size());
+    }
+
+    @Test
     @DisplayName("Popping from an empty stack does throw a NoSuchElementException")
-    public void poppingFromAnEmptyStack() {
+    public void testForPopEmpty() {
+        testStack = new TqsStack<>(10);
         assertThrows(NoSuchElementException.class, () -> {
             testStack.pop();
         });
@@ -80,17 +97,16 @@ public class TqsStackTests {
 
     @Test
     @DisplayName("Peeking into an empty stack does throw a NoSuchElementException")
-    public void peekingIntoAnEmptyStack() {
+    public void testForPeekIntoEmpty() {
+        testStack = new TqsStack<>(10);
         assertThrows(NoSuchElementException.class, () -> {
-
             testStack.peek();
         });
     }
 
     @Test
-    @DisplayName("For bounded stacks only: pushing onto a full stack does throw\n" +
-            "an IllegalStateException")
-    public void pushingOntoAFullStack() {
+    @DisplayName("For bounded stacks only: pushing onto a full stack does throw an IllegalStateException")
+    public void testForBoundedStack() {
         testStack = new TqsStack<>(2);
         testStack.push(3);
         testStack.push(5);
@@ -98,5 +114,6 @@ public class TqsStackTests {
             testStack.push(6);
         });
     }
+
 
 }
