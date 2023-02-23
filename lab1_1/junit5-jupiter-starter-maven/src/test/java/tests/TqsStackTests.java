@@ -13,6 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class TqsStackTests {
     private static TqsStack<Integer> testStack;
+    private static TqsStack<Integer> testStack2;
 
     @BeforeEach
     void setup() {
@@ -73,7 +74,31 @@ public class TqsStackTests {
     @Test
     @DisplayName("Popping from an empty stack does throw a NoSuchElementException")
     public void poppingFromAnEmptyStack() {
-        assertThrows(NoSuchElementException.class, () -> testStack.pop());
+        assertThrows(NoSuchElementException.class, () -> {
+
+            testStack2.pop();
+        });
+    }
+
+    @Test
+    @DisplayName("Peeking into an empty stack does throw a NoSuchElementException")
+    public void peekingIntoAnEmptyStack() {
+        assertThrows(NoSuchElementException.class, () -> {
+
+            testStack2.peek();
+        });
+    }
+
+    @Test
+    @DisplayName("For bounded stacks only: pushing onto a full stack does throw\n" +
+            "an IllegalStateException")
+    public void pushingOntoAFullStack() {
+        assertThrows(IllegalStateException.class, () -> {
+            testStack = new TqsStack<>(2);
+            testStack.push(3);
+            testStack.push(5);
+            testStack.push(6);
+        });
     }
 
 }
