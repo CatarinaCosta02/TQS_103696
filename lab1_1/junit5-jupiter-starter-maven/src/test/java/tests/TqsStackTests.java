@@ -13,7 +13,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class TqsStackTests {
     private static TqsStack<Integer> testStack;
-    private static TqsStack<Integer> testStack2;
 
     @BeforeEach
     void setup() {
@@ -25,7 +24,7 @@ public class TqsStackTests {
         testStack = null;
     }
 
-    // passed
+
     @Test
     @DisplayName("A stack is empty on construction")
     public void stackIsEmptyOnConstruction() {
@@ -33,7 +32,7 @@ public class TqsStackTests {
         assertEquals(true, stack.isEmpty());
     }
 
-    // passed
+
     @Test
     @DisplayName("A stack has size 0 on construction")
     public void stackHasSizeZeroOnConstruction() {
@@ -41,7 +40,7 @@ public class TqsStackTests {
         assertEquals(0, stack.size());
     }
 
-    // passed
+
     @Test
     @DisplayName("After n pushes to an empty stack, n >0, the stack is not empty and its size is n")
     public void afterNPushesToAnEmptyStack() {
@@ -54,7 +53,7 @@ public class TqsStackTests {
         assertEquals(4, testStack.size());
     }
 
-    // passed
+
     @Test
     @DisplayName("If one pushes x then pops, the value popped is x")
     public void ifPushesXThenPops() {
@@ -63,7 +62,7 @@ public class TqsStackTests {
     }
 
     @Test
-    @DisplayName("If one pushes x then peeks, the value returned is x, but the size stays the same")
+    @DisplayName("If one pushes x then pops, the stack is empty")
     public void ifPushesXThenPeeks() {
         testStack = new TqsStack<>(10);
         testStack.push(3);
@@ -75,8 +74,7 @@ public class TqsStackTests {
     @DisplayName("Popping from an empty stack does throw a NoSuchElementException")
     public void poppingFromAnEmptyStack() {
         assertThrows(NoSuchElementException.class, () -> {
-
-            testStack2.pop();
+            testStack.pop();
         });
     }
 
@@ -85,7 +83,7 @@ public class TqsStackTests {
     public void peekingIntoAnEmptyStack() {
         assertThrows(NoSuchElementException.class, () -> {
 
-            testStack2.peek();
+            testStack.peek();
         });
     }
 
@@ -93,10 +91,10 @@ public class TqsStackTests {
     @DisplayName("For bounded stacks only: pushing onto a full stack does throw\n" +
             "an IllegalStateException")
     public void pushingOntoAFullStack() {
+        testStack = new TqsStack<>(2);
+        testStack.push(3);
+        testStack.push(5);
         assertThrows(IllegalStateException.class, () -> {
-            testStack = new TqsStack<>(2);
-            testStack.push(3);
-            testStack.push(5);
             testStack.push(6);
         });
     }
