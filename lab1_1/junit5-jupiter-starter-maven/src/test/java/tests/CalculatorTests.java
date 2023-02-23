@@ -23,10 +23,6 @@ import java.util.Stack;
 
 public class CalculatorTests {
 
-    // create a Stack
-    Stack<Integer> stack = new Stack<>();
-
-
     @Test
     @DisplayName("1 + 1 = 2")
     void addsTwoNumbers() {
