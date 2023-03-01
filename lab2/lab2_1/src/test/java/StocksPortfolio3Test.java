@@ -2,9 +2,13 @@ import org.example.IStockmarketService;
 import org.example.Stock;
 import org.example.StocksPortfolio;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.mockito.verification.VerificationMode;
+
+import java.util.List;
 
 import static jdk.internal.org.objectweb.asm.util.CheckClassAdapter.verify;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -12,6 +16,7 @@ import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.when;
 
+@ExtendWith(MockitoExtension.class)
 public class StocksPortfolio3Test {
     // 1. Prepare a mock to substitute the remote service (@Mock annotation)
     // 2. Create an instance of the subject under test (SuT) and use the mock to set
@@ -22,9 +27,18 @@ public class StocksPortfolio3Test {
     //5. Verify the result (assert) and the use of the mock (verify)
 
     @Mock
-    IStockmarketService market;
+    private IStockmarketService market;
+    private List<Stock> stocks;
     @InjectMocks
     StocksPortfolio portfolio;
+
+    @Test
+    public void addStockTest(){
+        portfolio.addStock(new Stock("EBAY", 2));
+        portfolio.addStock(new Stock("MSFT", 4));
+        portfolio.addStock(new Stock("NOTUSED", 4));
+        assertEquals(3, portfolio.getStocks().size());
+    }
     @Test
     public void getTotalValueAnnot(){
         when(market.lookUpPrice("EBAY")).thenReturn(4.0);
