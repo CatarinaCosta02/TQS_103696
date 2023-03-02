@@ -20,6 +20,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="employee-mngr" options="-parameters" />
+      <module name="gs-MockForHttpClient" options="--add-exports java.base/sun.nio.cs=ALL-UNNAMED" />
       <module name="gs_cars_containers" options="-parameters" />
     </option>
   </component>

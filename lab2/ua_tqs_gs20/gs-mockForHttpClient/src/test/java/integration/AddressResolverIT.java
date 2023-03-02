@@ -9,11 +9,17 @@ import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.Optional;
 
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+//import static org.junit.jupiter.engine.discovery.DiscoverySelectorResolver.resolver;
+import static sun.nio.cs.Surrogate.is;
 
 public class AddressResolverIT {
+
+    AddressResolver resolver = new AddressResolver(new TqsBasicHttpClient());
 
 
     @BeforeEach
@@ -26,6 +32,12 @@ public class AddressResolverIT {
         //todo
 
         // repeat the same tests conditions from AddressResolverTest, without mocks
+        Optional<Address> result = resolver.findAddressForLocation(40.633116,-8.658784);
+        Address esperado = new Address("Jacinto Magalhães", "Jacksonville", "FL", "32202", "1");
+
+        //return
+        //assertThat(result.toString(), is(esperado.toString()));
+        assertEquals(result.toString(), esperado.toString());
 
     }
 
@@ -34,6 +46,7 @@ public class AddressResolverIT {
 
         //todo
         // repeat the same tests conditions from AddressResolverTest, without mocks
+        assertThrows(IndexOutOfBoundsException.class, () -> resolver.findAddressForLocation(40.633116,-8.658784));
         
     }
 

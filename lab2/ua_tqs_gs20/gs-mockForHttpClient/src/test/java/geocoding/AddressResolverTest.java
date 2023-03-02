@@ -1,9 +1,12 @@
 package geocoding;
 
+import connection.ISimpleHttpClient;
 import org.json.simple.parser.ParseException;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
@@ -13,10 +16,14 @@ import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyString;
 
 @ExtendWith(MockitoExtension.class)
 class AddressResolverTest {
 
+    @Mock
+    ISimpleHttpClient httpClient;
+    @InjectMocks
     AddressResolver resolver;
 
     @Test
@@ -101,7 +108,7 @@ class AddressResolverTest {
                 "}\n" +
                 "\n";
 
-        Mockito.when(httpClient.doHttpGet(any(type: String.class))).thenReturn(resultado);
+        Mockito.when(httpClient.doHttpGet(anyString())).thenReturn(resultado);
 
         // will crash for now...need to set the resolver before using it
         Optional<Address> result = resolver.findAddressForLocation( 40.633116,-8.658784);
@@ -110,7 +117,7 @@ class AddressResolverTest {
         //Address result = resolver.findAddressForLocation( 40.633116,-8.658784);
         //Address expected = new Address( "Avenida João Jacinto de Magalhães", "Aveiro", "", "3810-149", null);
 
-        assertEquals( result.get(),  new Address( "Avenida João Jacinto de Magalhães", "Aveiro", "", "3810-149", null););
+        assertEquals( result.get(),  new Address( "Avenida João Jacinto de Magalhães", "Aveiro", "", "3810-149", null));
 
     }
 
@@ -196,7 +203,7 @@ class AddressResolverTest {
                 "}\n" +
                 "\n";
 
-        Mockito.when(httpClient.doHttpGet(any(type: String.class))).thenReturn(mau);
+        Mockito.when(httpClient.doHttpGet(anyString())).thenReturn(mau);
         Optional<Address> result = resolver.findAddressForLocation( -361,-361);
         // verify no valid result
         assertFalse( result.isPresent());
