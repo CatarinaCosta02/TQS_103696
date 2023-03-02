@@ -4,9 +4,11 @@ import java.util.ArrayList;
 
 public class StocksPortfolio {
 
+
+
     private ArrayList<Stock> stocks = new ArrayList<>();
     private IStockmarketService stockmarket;
-
+    
     public StocksPortfolio(IStockmarketService stockmarket) {
 
         this.stockmarket = stockmarket;

@@ -2,6 +2,7 @@ import org.example.IStockmarketService;
 import org.example.Stock;
 import org.example.StocksPortfolio;
 import org.hamcrest.CoreMatchers;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -23,9 +24,16 @@ public class StocksPortfolio3Test {
     //5. Verify the result (assert) and the use of the mock (verify)
 
     @Mock
-    private IStockmarketService market;
+    IStockmarketService market;
     @InjectMocks
     StocksPortfolio portfolio;
+
+
+    @BeforeEach
+    void setUp() {
+        portfolio = new StocksPortfolio(market);
+    }
+
 
     @Test
     public void getTotalValueAnnot(){
@@ -39,8 +47,9 @@ public class StocksPortfolio3Test {
         portfolio.addStock(new Stock("NOTUSED", 4));
 
         // 5. Verify the result (assert) and the use of the mock (verify)
-
-
+        double total = 4.0 * 2 + 1.5 * 4 + 1.5 * 4;
+        // assertThat(1.2, closeTo(1, 0.5)); exemplo de compração com hamcrest em inteiros
+        //assertThat(portfolio.getTotalValue(), IsCloseTo.closeTo(total,0));
         assertThat(portfolio.getTotalValue(), CoreMatchers.is(14.0));
         verify(market, times(2)).lookUpPrice(anyString());
 
