@@ -38,8 +38,6 @@ public class StocksPortfolio3Test {
         portfolio.addStock(new Stock("MSFT", 4));
         portfolio.addStock(new Stock("NOTUSED", 4));
 
-        double result = portfolio.getTotalValue();
-
         // 5. Verify the result (assert) and the use of the mock (verify)
 
 
