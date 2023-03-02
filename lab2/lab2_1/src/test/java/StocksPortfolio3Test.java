@@ -6,15 +6,11 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.mockito.verification.VerificationMode;
 
-import java.util.List;
-
-import static jdk.internal.org.objectweb.asm.util.CheckClassAdapter.verify;
+import static net.bytebuddy.matcher.ElementMatchers.is;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.anyString;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 public class StocksPortfolio3Test {
@@ -28,17 +24,9 @@ public class StocksPortfolio3Test {
 
     @Mock
     private IStockmarketService market;
-    private List<Stock> stocks;
     @InjectMocks
     StocksPortfolio portfolio;
 
-    @Test
-    public void addStockTest(){
-        portfolio.addStock(new Stock("EBAY", 2));
-        portfolio.addStock(new Stock("MSFT", 4));
-        portfolio.addStock(new Stock("NOTUSED", 4));
-        assertEquals(3, portfolio.getStocks().size());
-    }
     @Test
     public void getTotalValueAnnot(){
         when(market.lookUpPrice("EBAY")).thenReturn(4.0);
@@ -54,8 +42,9 @@ public class StocksPortfolio3Test {
 
         // 5. Verify the result (assert) and the use of the mock (verify)
 
-        /*assertEquals(14.0, result);
-        verify(market,times(2)).lookUpPrice(anyString());*/
+
+        assertThat(result, is(14.0));
+        verify(market, times(2)).lookUpPrice(anyString());
 
     }
 

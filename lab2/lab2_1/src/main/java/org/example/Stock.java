@@ -2,15 +2,16 @@ package org.example;
 
 public class Stock {
     private String label;
-    private int quantity;
+    private Integer quantity;
 
-    public Stock(String lable, int quantity) {
+    public Stock(String lable, Integer quantity) {
         this.label = lable;
         this.quantity = quantity;
     }
 
 
-    public int getQuantity() {
+    public Integer getQuantity() {
+
         return quantity;
     }
 
@@ -18,7 +19,8 @@ public class Stock {
         return label;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(Integer quantity) {
+
         this.quantity = quantity;
     }
 

@@ -8,11 +8,20 @@ public class StocksPortfolio {
     private IStockmarketService stockmarket;
 
     public StocksPortfolio(IStockmarketService stockmarket) {
+
         this.stockmarket = stockmarket;
     }
 
     public void addStock(Stock stock) {
         stocks.add(stock);
+    }
+
+    public IStockmarketService getStockmarket() {
+        return stockmarket;
+    }
+
+    public void setStockmarket(IStockmarketService stockmarket) {
+        this.stockmarket = stockmarket;
     }
 
     public double getTotalValue() {
