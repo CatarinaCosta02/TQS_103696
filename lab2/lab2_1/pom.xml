@@ -8,6 +8,29 @@
     <artifactId>lab2_1</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <slf4j.version>2.0.6</slf4j.version>
+        <logback.version>1.4.5</logback.version>
+
+        <junit-jupiter.version>5.9.2</junit-jupiter.version>
+        <mockito-junit-jupiter.version>5.1.1</mockito-junit-jupiter.version>
+
+        <maven-surefire-plugin.version>3.0.0-M9</maven-surefire-plugin.version>
+
+        <java.version>17</java.version>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+
+        <project.encondig>UTF-8</project.encondig>
+        <project.build.sourceEncoding>${project.encondig}</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>${project.encondig}</project.reporting.outputEncoding>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -18,6 +41,12 @@
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
             <version>${logback.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-all</artifactId>
+            <version>1.3</version>
         </dependency>
 
         <dependency>
@@ -44,26 +73,5 @@
         </plugins>
     </build>
 
-    <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-        <slf4j.version>2.0.6</slf4j.version>
-        <logback.version>1.4.5</logback.version>
-
-        <junit-jupiter.version>5.9.2</junit-jupiter.version>
-        <mockito-junit-jupiter.version>5.1.1</mockito-junit-jupiter.version>
-
-        <maven-surefire-plugin.version>3.0.0-M9</maven-surefire-plugin.version>
-
-        <java.version>17</java.version>
-        <maven.compiler.target>${java.version}</maven.compiler.target>
-        <maven.compiler.source>${java.version}</maven.compiler.source>
-
-        <project.encondig>UTF-8</project.encondig>
-        <project.build.sourceEncoding>${project.encondig}</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>${project.encondig}</project.reporting.outputEncoding>
-    </properties>
 
 </project>

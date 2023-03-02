@@ -1,10 +1,10 @@
 package org.example;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class StocksPortfolio {
 
-    private List<Stock> stocks;
+    private ArrayList<Stock> stocks = new ArrayList<>();
     private IStockmarketService stockmarket;
 
     public StocksPortfolio(IStockmarketService stockmarket) {
@@ -13,7 +13,7 @@ public class StocksPortfolio {
     }
 
     public void addStock(Stock stock) {
-        stocks.add(stock);
+        this.stocks.add(stock);
     }
 
     public IStockmarketService getStockmarket() {
@@ -25,10 +25,14 @@ public class StocksPortfolio {
     }
 
     public double getTotalValue() {
-        double total = 0.0;
-        for (Stock stock : stocks) {
-            total += stock.getQuantity() * stockmarket.lookUpPrice(stock.getLabel());
+        double total = 0;
+        try{
+        for (Stock stock : this.stocks) {
+            total += stock.getQuantity() * this.stockmarket.lookUpPrice(stock.getLabel());
         }
         return total;
+    }catch (Exception e){
+            return 0;
+        }
     }
 }

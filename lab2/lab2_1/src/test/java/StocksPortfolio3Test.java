@@ -1,14 +1,14 @@
 import org.example.IStockmarketService;
 import org.example.Stock;
 import org.example.StocksPortfolio;
+import org.hamcrest.CoreMatchers;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import static net.bytebuddy.matcher.ElementMatchers.is;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.*;
 
@@ -43,10 +43,11 @@ public class StocksPortfolio3Test {
         // 5. Verify the result (assert) and the use of the mock (verify)
 
 
-        assertThat(result, is(14.0));
+        assertThat(portfolio.getTotalValue(), CoreMatchers.is(14.0));
         verify(market, times(2)).lookUpPrice(anyString());
 
     }
+
 
     /*private IStockmarketService verify(IStockmarketService market, VerificationMode times) {
         return null;
