@@ -56,4 +56,22 @@ These tests often require a more complex setup tah unit tests, and may need to u
 
 ### C:
 
+It uses the `@WebMvcTest` annotation, that tells Spring to create a minimal application context taht only conatins the beans required for testing Spring MVC controllers. This means that you can test your controllers in isolation from the rest of the application, without having to load the entire application  context.
+
+Also, it encapsulates all web application beans and makes them available for testing the providing and entry point to server-side testing.
+
+### D:
+
+Uses @SpringBootTest, to start the full web context.
+
+This annotation is a Spring Boot annotation used to test Spring Boot applications. It can be used to load the entire Spring application context and run integration tests with the application's dependencies.
+
+The  @SpringBootTest annotation tells Spirng Boot to look for a main configuration class( annoted with @SpringBootApplication ou @Configuration) and load the entire application context.
+
+### E:
+
+Similar to D, but instead of using the `@AutoConfigureMockMvc` annotation that is used to configure a `MockMvc` instance for testing Spirng MVC controllers, uses an API client.
+
+
+
 
