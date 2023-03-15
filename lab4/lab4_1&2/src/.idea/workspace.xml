@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7cd4c71c-6919-448e-8988-61264cf04fb9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/main/java/org/example/Browser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/org/example/Driver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/org/example/WebDriver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/java/AppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab2/ua_tqs_gs20/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lab2/ua_tqs_gs20/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/.idea/jpa-buddy.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/Jenkinsfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs-employee-mngr/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs-employee-mngr/Jenkinsfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs-employee-mngr/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs-employee-mngr/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs-employee-mngr/src/main/java/tqsdemo/employeemngr/EmployeeMngrApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs-employee-mngr/src/main/java/tqsdemo/employeemngr/boundary/EmployeeRestController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs-employee-mngr/src/main/java/tqsdemo/employeemngr/cd-diagram.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs-employee-mngr/src/main/java/tqsdemo/employeemngr/data/Employee.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs-employee-mngr/src/main/java/tqsdemo/employeemngr/data/EmployeeDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs-employee-mngr/src/main/java/tqsdemo/employeemngr/data/EmployeeRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs-employee-mngr/src/main/java/tqsdemo/employeemngr/service/EmployeeService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs-employee-mngr/src/main/java/tqsdemo/employeemngr/service/EmployeeServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs-employee-mngr/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs-employee-mngr/src/test/java/tqsdemo/employeemngr/employee/A_EmployeeRepositoryTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs-employee-mngr/src/test/java/tqsdemo/employeemngr/employee/B_EmployeeService_UnitTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs-employee-mngr/src/test/java/tqsdemo/employeemngr/employee/C_EmployeeController_WithMockServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs-employee-mngr/src/test/java/tqsdemo/employeemngr/employee/D_EmployeeRestControllerIT.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs-employee-mngr/src/test/java/tqsdemo/employeemngr/employee/E_EmployeeRestControllerTemplateIT.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs-employee-mngr/src/test/java/tqsdemo/employeemngr/employee/JsonUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs-employee-mngr/src/test/resources/tqsdemo/employeemngr/employee/application-integrationtest.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs-mockForHttpClient/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs-mockForHttpClient/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs-mockForHttpClient/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs-mockForHttpClient/.idea/jpa-buddy.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs-mockForHttpClient/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs-mockForHttpClient/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs-mockForHttpClient/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs-mockForHttpClient/src/main/java/connection/ISimpleHttpClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs-mockForHttpClient/src/main/java/connection/TqsBasicHttpClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs-mockForHttpClient/src/main/java/demo/GeocodeDemoMain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs-mockForHttpClient/src/main/java/geocoding/Address.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs-mockForHttpClient/src/main/java/geocoding/AddressResolver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs-mockForHttpClient/src/main/java/geocoding/ConfigUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs-mockForHttpClient/src/main/resources/config.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs-mockForHttpClient/src/test/java/geocoding/AddressResolverTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs-mockForHttpClient/src/test/java/integration/AddressResolverIT.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs_cars_containers/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs_cars_containers/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs_cars_containers/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs_cars_containers/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs_cars_containers/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs_cars_containers/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs_cars_containers/src/main/java/tqs/cars/GsCarsContainersApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs_cars_containers/src/main/java/tqs/cars/boundary/CarController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs_cars_containers/src/main/java/tqs/cars/boundary/ResourceNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs_cars_containers/src/main/java/tqs/cars/data/CarRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs_cars_containers/src/main/java/tqs/cars/model/Car.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs_cars_containers/src/main/java/tqs/cars/services/CarManagerService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs_cars_containers/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/lab3_1/ua_tqs_gs20/gs_cars_containers/src/test/java/tqs/cars/GsCarsContainersApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lab3/ua_tqs_gs20/.idea/workspace.xml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="2Mp6d2EHye1jCuyKMVU2mj7MMeL" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/catarina/Desktop/TQS_103696/lab4/lab4_1",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7cd4c71c-6919-448e-8988-61264cf04fb9" name="Changes" comment="" />
+      <created>1678452260564</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1678452260564</updated>
+      <workItem from="1678452261737" duration="17000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
