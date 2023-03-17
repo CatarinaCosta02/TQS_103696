@@ -1,29 +1,45 @@
 package org.example;
 
 public class Book {
-    private String title;
+
+    private String name;
+    private boolean state;
     private String author;
-    private int pages;
 
-    public Book(String title, String author, int pages) {
-        this.title = title;
+    public Book(String name, boolean state, String author) {
+        this.name = name;
+        this.state = state;
         this.author = author;
-        this.pages = pages;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
+
 
     public String getAuthor() {
         return author;
     }
 
-    public int getPages() {
-        return pages;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String toString() {
-        return title + ", " + author + ", " + pages + " pages";
+
+    public void setAuthor(String author) {
+        this.author = author;
     }
+
+    public boolean isState(){
+        return state;
+    }
+
+    public void checkout() {
+        state = false;
+    }
+
+    public void checkin() {
+        state = true;
+    }
+
 }

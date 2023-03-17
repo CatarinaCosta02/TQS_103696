@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b20899f-3ceb-4468-9e9f-b52ce794a38e" name="Changes" comment="" />
+    <list default="true" id="7b20899f-3ceb-4468-9e9f-b52ce794a38e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab5_2/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab5_2/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab5_2/src/main/java/org/example/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab5_2/src/main/java/org/example/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab5_2/src/main/resources/search_book.feature" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab5_2/src/main/resources/search_book.feature" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,6 +45,11 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/catarina/Desktop/TQS_103696/lab5/lab5_2",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
@@ -55,6 +65,9 @@
       <option name="presentableId" value="Default" />
       <updated>1679057147660</updated>
       <workItem from="1679057148917" duration="368000" />
+      <workItem from="1679089186800" duration="32000" />
+      <workItem from="1679090369204" duration="45000" />
+      <workItem from="1679090799153" duration="363000" />
     </task>
     <servers />
   </component>
