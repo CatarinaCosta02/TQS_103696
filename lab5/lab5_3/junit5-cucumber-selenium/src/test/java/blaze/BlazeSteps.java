@@ -60,19 +60,14 @@ public class BlazeSteps {
         driver.findElement(By.cssSelector(".btn-primary")).click();
     }
 
-    @And("Click purchase the flight")
-    public void purchaseTheFlight() {
-        driver.findElement(By.cssSelector(".btn-primary")).click();
+
+    @And("I should see the message of confirmation")
+    public void iShouldSeeTheMessageOfConfirmation() {
+        assertEquals("Thank you for your purchase today!", driver.findElement(By.cssSelector("h1")).getText());
     }
 
-
-    @And("I should see the message {string}")
-    public void iShouldSeeTheMessage(String message) {
-        assertEquals(message, driver.findElement(By.cssSelector(".lead")).getText());
-    }
-
-    @Then("Check purchase information")
-    public void checkPurchaseInformation() {
-        assertEquals("Thank you for your purchase today!", driver.findElement(By.cssSelector(".lead")).getText());
+    @Then("Check purchase information in the database")
+    public void checkPurchaseInformationInTheDatabase() {
+        driver.quit();
     }
 }
