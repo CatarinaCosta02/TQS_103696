@@ -46,6 +46,7 @@ public class Calculator {
         }
     }
 
+
     public Number value() {
         return stack.getLast();
     }
