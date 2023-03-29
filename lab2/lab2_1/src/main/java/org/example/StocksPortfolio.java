@@ -37,4 +37,8 @@ public class StocksPortfolio {
             return 0;
         }
     }
+
+    public void getPrice(String anyString) {
+        this.stockmarket.lookUpPrice(anyString);
+    }
 }
