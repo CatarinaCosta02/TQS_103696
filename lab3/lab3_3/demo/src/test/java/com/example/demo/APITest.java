@@ -23,7 +23,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class APITest {
 
     @LocalServerPort
-    private int port;
+    int port;
 
     @Autowired
     private TestRestTemplate restTemplate;
@@ -37,13 +37,10 @@ public class APITest {
     }
 
     @Test
-
     public void whenValidInput_thenCreateCar() {
         Car car = new Car("GLA SUV", "Mercedes-Benz");
-        ResponseEntity<Car> entity = restTemplate.postForEntity("api/cars", car, Car.class);
-
-        List<Car> found = carRepository.findAll();
-        assertThat(found).extracting(Car::getModel).containsOnly("GLA SUV");
+        restTemplate.postForEntity("/api/v1/cars/cars", car, Car.class);
+        assertThat(carRepository.findAll()).extracting(Car::getModel).containsOnly("GLA SUV");
     }
 
     @Test
@@ -51,7 +48,8 @@ public class APITest {
         createTestCar("GLA SUV", "Mercedes-Benz");
         createTestCar("C-Class", "Mercedes-Benz");
 
-        ResponseEntity<List<Car>> response = restTemplate.exchange("api/cars", HttpMethod.GET, null, new ParameterizedTypeReference<List<Car>>() {
+        ResponseEntity<List<Car>> response = restTemplate.exchange("/api/v1/cars/cars", HttpMethod.GET, null,
+                new ParameterizedTypeReference<List<Car>>() {
         });
 
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
