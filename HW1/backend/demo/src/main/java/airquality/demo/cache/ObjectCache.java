@@ -10,9 +10,9 @@ public class ObjectCache {
     private City city;
     private long expiryTime;
 
-    public ObjectCache(City city, long expiryTime) {
+    public ObjectCache(City city) {
         this.city = city;
-        this.expiryTime = expiryTime;
+        this.expiryTime = System.currentTimeMillis();
     }
 
     public boolean isExpired() {

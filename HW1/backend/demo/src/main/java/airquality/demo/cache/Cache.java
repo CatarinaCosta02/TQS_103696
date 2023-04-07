@@ -3,16 +3,17 @@ package airquality.demo.cache;
 import java.util.HashMap;
 import java.util.Map;
 
+import airquality.demo.models.City;
+
 public class Cache {
 
     private static final long TIMETOLIVE = 100L;
     private static Map<String, ObjectCache> cache = new HashMap<>();
-    private static Map<String, Long> expiration = new HashMap<>();
     private static int missCount = 0;
     private static int hitCount = 0;
     private static int numRequests = 0;
 
-    public Cache() {
+    static { 
         Thread cleanerThread = new Thread(() -> {
             while (!Thread.currentThread().isInterrupted()) {
                 try {
@@ -27,54 +28,37 @@ public class Cache {
         cleanerThread.start();
     }
 
-    public int getMissCount() {
+    public static int getMissCount() {
         return missCount;
     }
 
-    public int getHitCount() {
+    public static int getHitCount() {
         return hitCount;
     }
 
-    public int getNumRequests() {
+    public static int getNumRequests() {
         return numRequests;
     }
 
-    public ObjectCache getCachedRequest(String key){
+    public static City getCachedRequest(String key) {
         numRequests++;
-        // vê se esta na cache e se nao esta expirado
-        if(cache.containsKey(key)){
-            if(expiration.get(key) < getCurTime()){
-                remCachedRequest(key);
-                missCount++;
-                return null;
-            }
+        if (cache.containsKey(key)) {
             hitCount++;
-            return cache.get(key);
+            return cache.get(key).getCity();
         }
         missCount++;
         return null;
     }
 
-
-    private Long getCurTime() {
-        return System.currentTimeMillis();
-    }
-    
-    private void remCachedRequest(String key) {
-        cache.remove(key);
-        expiration.remove(key);
+    public static void add(String key, City city) {
+        cache.put(key, new ObjectCache(city));
     }
 
-    // write me a function that prints the json
-    public String printCache() {
-        return "{\n" +
-                "  \"numRequests\": " + numRequests + ",\n" +
-                "  \"hitCount\": " + hitCount + ",\n" +
-                "  \"missCount\": " + missCount + "\n" +
-                "}";
-    }
-
-    public Map<String, ObjectCache> getCache() {
-        return cache;
+    public static Object printCache(){
+        return new Object(){
+            public final int numRequests = getNumRequests();
+            public final int hitCount = getHitCount();
+            public final int missCount = getMissCount();
+        };
     }
 }

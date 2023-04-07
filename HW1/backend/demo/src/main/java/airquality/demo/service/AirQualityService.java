@@ -1,5 +1,4 @@
 package airquality.demo.service;
-import java.util.Map;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,26 +16,30 @@ public class AirQualityService {
     private static final String API_KEY = "a06833c3d40f4f8d93d4b2c47c39fa8f";
     private static final String API_URL = "https://api.weatherbit.io/v2.0/current/airquality";
     private static final String API_FORECAST = "https://api.weatherbit.io/v2.0/forecast/airquality";
-    Cache cache = new Cache();
+    
     RestTemplate restTemplate = new RestTemplate();
 
     public ResponseEntity<City> getAirQuality(String city) {
-        if (!cache.getCache().containsKey(city) || cache.getCache().get(city).isExpired()) {
-            ResponseEntity<String> response;
-            response = apiChoice(API.current, city, null);
-            return processResponse(response);
+        City cacheRequest = Cache.getCachedRequest("current/"+city);
+        if (cacheRequest == null) {
+            ResponseEntity<String> response = apiChoice(API.current, city, null);
+            ResponseEntity<City> cityObject = processResponse(response);
+            Cache.add("current/" + city, cityObject.getBody());
+            return cityObject;
         } else {
-            return new ResponseEntity<>(cache.getCache().get(city).getCity(), HttpStatus.OK);
+            return new ResponseEntity<>(cacheRequest, HttpStatus.OK);
         }
     }
 
     public ResponseEntity<City> getAirQualityForecast(String city) {
-        if (!cache.getCache().containsKey(city) || cache.getCache().get(city).isExpired()) {
-            ResponseEntity<String> response;
-            response = apiChoice(API.forecast, city, null);
-            return processResponse(response);
+        City cacheRequest = Cache.getCachedRequest("forecast/"+city);
+        if (cacheRequest == null) {
+            ResponseEntity<String> response = apiChoice(API.forecast, city, null);
+            ResponseEntity<City> cityObject = processResponse(response);
+            Cache.add(" forecast/" + city, cityObject.getBody());
+            return cityObject;
         } else {
-            return new ResponseEntity<>(cache.getCache().get(city).getCity(), HttpStatus.OK);
+            return new ResponseEntity<>(cacheRequest, HttpStatus.OK);
         }
     }
 
@@ -74,10 +77,5 @@ public class AirQualityService {
             return responseCountries;
         }
     }
-
-    public Map<String, ObjectCache> getCache() {
-        return cache.getCache();
-    }
-
 
 }
