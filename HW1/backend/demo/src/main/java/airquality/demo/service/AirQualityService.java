@@ -9,7 +9,6 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import airquality.demo.cache.Cache;
-import airquality.demo.cache.ObjectCache;
 import airquality.demo.models.City;
 @Service
 public class AirQualityService {
@@ -36,7 +35,7 @@ public class AirQualityService {
         if (cacheRequest == null) {
             ResponseEntity<String> response = apiChoice(API.forecast, city, null);
             ResponseEntity<City> cityObject = processResponse(response);
-            Cache.add(" forecast/" + city, cityObject.getBody());
+            Cache.add("forecast/" + city, cityObject.getBody());
             return cityObject;
         } else {
             return new ResponseEntity<>(cacheRequest, HttpStatus.OK);
