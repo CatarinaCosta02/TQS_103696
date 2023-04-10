@@ -3,8 +3,6 @@ package airquality.demo.controllers;
 import org.springframework.web.bind.annotation.RequestMapping;
 import airquality.demo.models.City;
 import airquality.demo.service.AirQualityService;
-
-import org.checkerframework.checker.units.qual.A;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
