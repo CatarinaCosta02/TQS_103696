@@ -1,4 +1,4 @@
-package UnitTest;
+package airquality.demo.UnitTest;
 
 
 import org.junit.jupiter.api.DisplayName;
@@ -11,7 +11,6 @@ import airquality.demo.models.City;
 public class CacheTest {
 
     private Cache cache;
-    private ObjectCache objectCache;
     private City city;
 
 

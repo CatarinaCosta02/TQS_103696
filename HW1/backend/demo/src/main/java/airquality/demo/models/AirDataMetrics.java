@@ -32,7 +32,4 @@ public class AirDataMetrics {
     @JsonProperty("predominant_pollen_type")
     private String predominantPollenType;
 
-
-
-
 }

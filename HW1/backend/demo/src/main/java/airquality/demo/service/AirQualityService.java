@@ -16,7 +16,7 @@ public class AirQualityService {
     private static final String API_URL = "https://api.weatherbit.io/v2.0/current/airquality";
     private static final String API_FORECAST = "https://api.weatherbit.io/v2.0/forecast/airquality";
     
-    RestTemplate restTemplate = new RestTemplate();
+    private RestTemplate restTemplate = new RestTemplate();
 
     public ResponseEntity<City> getAirQuality(String city) {
         City cacheRequest = Cache.getCachedRequest("current/"+city);
@@ -42,7 +42,11 @@ public class AirQualityService {
         }
     }
 
-    private ResponseEntity<City> processResponse(ResponseEntity<String> response) {
+    public ResponseEntity<Object> getCache() {
+        return new ResponseEntity<>(Cache.printCache(), HttpStatus.OK);
+    }
+
+    public ResponseEntity<City> processResponse(ResponseEntity<String> response) {
         if (response.getBody() == null)
             return null;
         City city = null;

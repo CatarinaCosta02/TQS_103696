@@ -15,11 +15,6 @@ public class City {
     private double lon;
     @JsonProperty("data")
     private AirDataMetrics[] data;
-
     
-    /*public City(String cityName) {
-        this.cityName = cityName;
-    }*/
-
 
 }

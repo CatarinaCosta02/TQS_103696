@@ -12,7 +12,6 @@ import airquality.demo.cache.Cache;
 
 public class CacheController {
 
-
     @GetMapping("/cache")
     public ResponseEntity<Object> getCache(){
         Object request = Cache.printCache();
@@ -21,6 +20,4 @@ public class CacheController {
         else
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
-
-    
 }
