@@ -15,9 +15,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.springframework.http.MediaType;
 
-import airquality.demo.cache.Cache;
 import airquality.demo.controllers.AirQualityRestController;
-import airquality.demo.controllers.CacheController;
 import airquality.demo.models.City;
 import airquality.demo.service.AirQualityService;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -26,8 +24,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.notNullValue;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-import static org.hamcrest.Matchers.*;
 
 @WebMvcTest(AirQualityRestController.class)
 public class AirQualityControllerTest {

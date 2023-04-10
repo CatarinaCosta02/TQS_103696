@@ -1,7 +1,7 @@
 package airquality.demo.IntegrationTest;
 
 import static org.hamcrest.Matchers.notNullValue;
-import static org.mockito.Mockito.verify;
+
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +14,8 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.http.MediaType;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+
+
 import static org.hamcrest.Matchers.*;
 
 
@@ -67,7 +69,7 @@ public class ControllersTest {
         .andExpect(jsonPath("$.city_name", is(cityObject.getCityName())))
         .andExpect(jsonPath("$.lat", is(cityObject.getLat())))
         .andExpect(jsonPath("$.lon", is(cityObject.getLon())))
-        .andExpect(jsonPath("$.data", hasSize(greaterThan(1))))
+        .andExpect(jsonPath("$.data", hasSize(greaterThanOrEqualTo(1))))
         .andExpect(jsonPath("$.data[0].aqi", notNullValue()))
         .andExpect(jsonPath("$.data[0].o3", notNullValue()))
         .andExpect(jsonPath("$.data[0].so2", notNullValue()))

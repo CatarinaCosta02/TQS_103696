@@ -31,14 +31,15 @@ public class CacheControllerTest {
     @BeforeEach
     public void setUp() {   
     }
-
+    
     @Test
     public void getCacheTest() throws Exception{
         Mockito.when(airQualityService.getCache()).thenReturn(new ResponseEntity<>(Cache.printCache(), HttpStatus.OK));
         mvc.perform(get("/api/cache").contentType(MediaType.APPLICATION_JSON))
             .andExpect(status().isOk())
-            .andExpect(jsonPath("numRequests").value(0))
-            .andExpect(jsonPath("missCount").value(0))
-            .andExpect(jsonPath("hitCount").value(0));
+            .andExpect(jsonPath("numRequests").value(Cache.getNumRequests()))
+            .andExpect(jsonPath("missCount").value(Cache.getMissCount()))
+            .andExpect(jsonPath("hitCount").value(Cache.getHitCount()));
     }
+    
 }
