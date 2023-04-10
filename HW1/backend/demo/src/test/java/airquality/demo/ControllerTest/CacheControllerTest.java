@@ -10,18 +10,17 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.web.servlet.MockMvc;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.http.MediaType;
 
 import airquality.demo.cache.Cache;
+import airquality.demo.controllers.CacheController;
 import airquality.demo.service.AirQualityService;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static org.mockito.Mockito.when; 
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status; 
 
 @WebMvcTest(CacheController.class)
-public class CacheController {
+public class CacheControllerTest {
 
     @Autowired
     private MockMvc mvc;
